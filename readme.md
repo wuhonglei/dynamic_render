@@ -1,7 +1,11 @@
 ## 说明
-该项目展示了前端从服务端动态拿取内容进行渲染
+该项目展示了前端从服务端动态拿取内容进行渲染。
 
-TODO 未解决的问题：
+参考：
+https://juejin.cn/book/6844733759942557704/section/6844733760148078599
+https://run.iviewui.com/
+
+## TODO 未解决的问题：
 
 1.如何允许访问 import、require 方式引入的内容
 答：
@@ -31,6 +35,22 @@ export default{
             return this.get(obj, 'a.b'); // this.get 将通过 mixin 方式混入该组件
         }
     }
+}
+```
+
+2. style 中 postcss 方式的编译
+
+```css
+// 不支持
+.container {
+    & .child {
+        color: red;
+    }
+}
+
+// 支持
+.container  .child {
+    color: red;
 }
 ```
 
